@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor</title>
+    <!-- ! fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ! font awesome -->
+    <script
+      src="https://kit.fontawesome.com/21da3bc2eb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <a href="#" class="logo">editor</a>
+        <!-- !bar -->
+        <div class="btns">
+          <div class="upload">
+            <label for="up"><i class="fa-solid fa-upload"></i> upload</label>
+            <input type="file" id="up" />
+          </div>
+
+          <a download="image" id="download"
+            ><i class="fa-solid fa-download"></i> download</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- !btns -->
+    <i class="fa-solid fa-bars openclose" id="openclose"></i>
+    <!-- !hero -->
+    <div class="hero">
+      <div class="container">
+        <!-- !edit -->
+        <div class="edit">
+          <i class="fa-solid fa-arrows-rotate clear" id="clear"></i>
+          <!-- *adjust -->
+          <div class="adjust">
+            <h3>ADJUST</h3>
+            <ul>
+              <li>
+                <label for="brightness">brightness</label>
+                <span class="value">1</span>
+                <input
+                  type="range"
+                  id="brightness"
+                  min="0"
+                  max="2"
+                  step="0.1"
+                  value="1"
+                />
+              </li>
+              <li>
+                <label for="blur">blur</label>
+                <span class="value">0</span>
+                <input
+                  type="range"
+                  id="blur"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="0"
+                />
+              </li>
+              <li>
+                <label for="contrast">contrast</label>
+                <span class="value">100</span>
+                <input
+                  type="range"
+                  id="contrast"
+                  min="0"
+                  max="200"
+                  step="1"
+                  value="100"
+                />
+              </li>
+              <li>
+                <label for="grayscale">grayscale</label>
+                <span class="value">0</span>
+                <input
+                  type="range"
+                  id="grayscale"
+                  min="0"
+                  max="200"
+                  step="1"
+                  value="0"
+                />
+              </li>
+              <li>
+                <label for="huerotate">huerotate</label>
+                <span class="value">0</span>
+                <input
+                  type="range"
+                  id="huerotate"
+                  min="0"
+                  max="180"
+                  step="1"
+                  value="0"
+                />
+              </li>
+              <li>
+                <label for="invert">invert</label>
+                <span class="value">0</span>
+                <input
+                  type="range"
+                  id="invert"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="0"
+                />
+              </li>
+              <li>
+                <label for="opacity">opacity</label>
+                <span class="value">100</span>
+                <input
+                  type="range"
+                  id="opacity"
+                  min="0"
+                  max="200"
+                  step="1"
+                  value="100"
+                />
+              </li>
+              <li>
+                <label for="saturate">saturate</label>
+                <span class="value">1</span>
+                <input
+                  type="range"
+                  id="saturate"
+                  min="0"
+                  max="10"
+                  step="0.1"
+                  value="1"
+                />
+              </li>
+              <li>
+                <label for="sepia">sepia</label>
+                <span class="value">0</span>
+                <input
+                  type="range"
+                  id="sepia"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="0"
+                />
+              </li>
+            </ul>
+          </div>
+          <!-- *filters -->
+          <div class="filters">
+            <h3>FILTERS</h3>
+            <ul>
+              <img src="./images/epic.png" class="epic" data-filter="epic" />
+              <img
+                src="./images/afterglow.png"
+                class="afterglow"
+                data-filter="afterglow"
+              />
+              <img src="./images/solar.png" class="solar" data-filter="solar" />
+              <img
+                src="./images/selfie.png"
+                class="selfie"
+                data-filter="selfie"
+              />
+              <img src="./images/retro.png" class="retro" data-filter="retro" />
+              <img src="./images/dare.png" class="dare" data-filter="dare" />
+              <img src="./images/drama.png" class="drama" data-filter="drama" />
+            </ul>
+          </div>
+        </div>
+
+        <!-- !img box -->
+        <div class="img">
+          <div id="loading">
+            <div class="lds-roller">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <img />
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
